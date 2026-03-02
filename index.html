@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aiutiamo i Gatti di Strada</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fff7f0;
+    text-align: center;
+}
+header {
+    background-color: #ff7f50;
+    color: white;
+    padding: 30px;
+}
+h2 {
+    color: #ff7f50;
+}
+.progress-container {
+    width: 80%;
+    background-color: #ddd;
+    border-radius: 25px;
+    margin: 20px auto;
+}
+.progress-bar {
+    height: 30px;
+    background-color: #ff7f50;
+    width: 0%;
+    border-radius: 25px;
+    color: white;
+    line-height: 30px;
+    transition: width 1s ease-in-out;
+}
+.galleria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+.galleria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+button, input[type=submit] {
+    padding: 12px 25px;
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover, input[type=submit]:hover {
+    background-color: #e66a3c;
+}
+</style>
+
+<script>
+let raccolti = 350;
+let obiettivo = 2000;
+
+function aggiornaBarra() {
+    let percentuale = (raccolti / obiettivo) * 100;
+    document.getElementById("barra").style.width = percentuale + "%";
+    document.getElementById("barra").innerHTML = raccolti + "€ raccolti";
+    document.getElementById("testo").innerHTML = raccolti + "€ raccolti su " + obiettivo + "€";
+}
+
+window.onload = aggiornaBarra;
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>🐾 Aiutiamo i Gatti di Strada 🐾</h1>
+<p>Raccolta fondi per sterilizzazione e cure veterinarie</p>
+</header>
+
+<h2>Stato Raccolta Fondi</h2>
+
+<div class="progress-container">
+    <div class="progress-bar" id="barra"></div>
+</div>
+
+<p id="testo"></p>
+
+<h2>I Gatti che Aiutiamo</h2>
+
+<div class="galleria">
+    <img src="https://placekitten.com/400/300">
+    <img src="https://placekitten.com/401/300">
+    <img src="https://placekitten.com/402/300">
+    <img src="https://placekitten.com/403/300">
+</div>
+
+<h2>Guarda il Nostro Video ❤️</h2>
+
+<video autoplay muted loop controls>
+    <source src="WhatsApp Video 2026-03-01 at 22.01.52.mp4" type="video/mp4">
+    Il tuo browser non supporta il video HTML5.
+</video>
+
+<h2>Fai una Donazione Sicura ❤️</h2>
+
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+  <input type="hidden" name="business" value="TUA_EMAIL_PAYPAL">
+  <input type="hidden" name="currency_code" value="EUR">
+  <input type="submit" value="Dona con PayPal ❤️">
+</form>
+
+<footer>
+© 2026 Aiutiamo i Gatti di Strada
+</footer>
+
+</body>
+</html>
